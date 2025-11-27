@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yuvansh Jain | My Little World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal website of Yuvansh Jain" />
+
+  <!-- Google Font (optional, safe for GitHub Pages) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+      --accent-2: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --transition-fast: 200ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+
+    .page-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.75), transparent);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #22c55e 0, #4ade80 18%, #166534 55%, #0f172a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9fafb;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.7);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .brand-text span:first-child {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text span:last-child {
+      font-size: 11px;
+      color: var(--text-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 14px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: #f9fafb;
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      color: var(--accent);
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.2), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(34, 197, 94, 0.45);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.3);
+    }
+
+    main {
+      margin-top: 6px;
+    }
+
+    section {
+      margin-top: 32px;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 6vw, 40px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #22c55e, #4ade80, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 480px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(15, 118, 110, 0.45), #020617 65%);
+      border-radius: var(--radius-lg);
+      padding: 10px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card h3 {
+      font-size: 13px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .hero-card p {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .hero-actions {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(120deg, #22c55e, #4ade80);
+      color: #052e16;
+      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 38px rgba(22, 163, 74, 0.55);
+      filter: brightness(1.02);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      color: #f9fafb;
+      border-color: rgba(148, 163, 184, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-orbit {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .orbit-bg {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.27), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(34, 197, 94, 0.25), transparent 60%),
+        radial-gradient(circle at 0% 80%, rgba(99, 102, 241, 0.25), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .orbit-main {
+      position: relative;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 14px 14px 10px;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.95));
+    }
+
+    .orbit-main-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .orbit-main-top-info {
+      font-size: 11px;
+    }
+
+    .orbit-main-top-info strong {
+      font-size: 12px;
+    }
+
+    .orbit-tag {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+    }
+
+    .orbit-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .orbit-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-soft);
+    }
+
+    .orbit-chart {
+      margin-top: 2px;
+      padding-top: 4px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      display: flex;
+      gap: 6px;
+      align-items: flex-end;
+      height: 80px;
+    }
+
+    .orbit-bar {
+      flex: 1;
+      min-width: 8px;
+      border-radius: 999px;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(34, 197, 94, 0.5));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orbit-bar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(34, 197, 94, 0.1), rgba(56, 189, 248, 0.4));
+      opacity: 0.85;
+    }
+
+    .orbit-bar:nth-child(2)::before {
+      background: linear-gradient(to top, rgba(37, 99, 235, 0.1), rgba(56, 189, 248, 0.6));
+    }
+
+    .orbit-bar:nth-child(3)::before {
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.1), rgba(234, 179, 8, 0.7));
+    }
+
+    .orbit-bar:nth-child(4)::before {
+      background: linear-gradient(to top, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.8));
+    }
+
+    .orbit-bar:nth-child(5)::before {
+      background: linear-gradient(to top, rgba(15, 118, 110, 0.05), rgba(16, 185, 129, 0.65));
+    }
+
+    .orbit-footer {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .orbit-footer strong {
+      color: #f9fafb;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    .orbit-footer-softpill {
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .orbit-floating {
+      position: absolute;
+      inset: auto auto 8px -6px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    .orbit-float-card {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.9);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-soft);
+    }
+
+    .dot-green {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+    }
+
+    .dot-blue {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #38bdf8;
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Sections */
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .section-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+      border-radius: var(--radius-lg);
+      padding: 12px 14px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .card:hover {
+      transform: translateY(-3px) translateZ(0);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.8);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-2);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .card-list {
+      margin-top: 8px;
+      list-style: none;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .card-list li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .card-list li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-soft);
+    }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .fact {
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 12px;
+      color: #f9fafb;
+      margin-bottom: 3px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-align: center;
+      padding: 6px;
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.9);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 6px;
+    }
+
+    .timeline {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 6px;
+      border-left: 1px solid rgba(148, 163, 184, 0.5);
+      padding-left: 10px;
+    }
+
+    .timeline-item {
+      margin-bottom: 6px;
+    }
+
+    .timeline-item strong {
+      display: block;
+      color: #f9fafb;
+      font-size: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      padding-top: 16px;
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-note {
+      opacity: 0.85;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed transparent;
+      transition: color var(--transition-fast), border-color var(--transition-fast);
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-shell {
+        padding: 12px 12px 40px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .card-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .fact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="page-shell">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-circle">Y</div>
+          <div class="brand-text">
+            <span>Yuvansh Jain</span>
+            <span>Little explorer</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#favorites">Favorites</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#today">Today I Am</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-kicker">
+          <span class="pill">
+            <span class="pill-dot"></span>
+            Age 6 · Growing fast
+          </span>
+          <span>Welcome to my first website</span>
+        </div>
+        <h1 class="hero-title">
+          Hi, I am <span class="highlight">Yuvansh</span>,<br />
+          I like building, playing and learning every day.
+        </h1>
+        <p class="hero-subtitle">
+          This page is my little corner of the internet. One place where I can collect my favourite things, show what I am learning, and build fun projects with my family.
+        </p>
+
+        <div class="hero-grid">
+          <div class="hero-card">
+            <h3>Curious mind</h3>
+            <p>
+              I ask a lot of questions and try to understand how things work, from toys and puzzles to screens and stories.
+            </p>
+          </div>
+          <div class="hero-card">
+            <h3>Big dreams</h3>
+            <p>
+              Today it might be cars and cartoons. Tomorrow it can be robots, space, games or anything else I imagine.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#favorites" class="btn-primary">
+            See my favourite things
+          </a>
+          <a href="#gallery" class="btn-ghost">
+            View photo wall
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-orbit">
+          <div class="orbit-bg"></div>
+          <div class="orbit-main">
+            <div class="orbit-main-top">
+              <div class="orbit-main-top-info">
+                <strong>Today&apos;s mini dashboard</strong><br />
+                Yuvansh&apos;s day in simple stats
+              </div>
+              <div class="orbit-tag">Live childhood view</div>
+            </div>
+
+            <div class="orbit-badge-row">
+              <span class="orbit-badge">Stories read · 3</span>
+              <span class="orbit-badge">Questions asked · 18</span>
+              <span class="orbit-badge">Laughs shared · 25</span>
+            </div>
+
+            <div class="orbit-chart">
+              <div class="orbit-bar" style="height: 70%;"></div>
+              <div class="orbit-bar" style="height: 90%;"></div>
+              <div class="orbit-bar" style="height: 55%;"></div>
+              <div class="orbit-bar" style="height: 80%;"></div>
+              <div class="orbit-bar" style="height: 65%;"></div>
+            </div>
+
+            <div class="orbit-footer">
+              <div>
+                <strong>Today looks bright</strong><br />
+                Learning, playing and resting in balance.
+              </div>
+              <div class="orbit-footer-softpill">
+                Parent note-ready dashboard
+              </div>
+            </div>
+          </div>
+
+          <div class="orbit-floating">
+            <div class="orbit-float-card">
+              <span class="dot-green"></span>
+              <span>Built with help from Dad</span>
+            </div>
+            <div class="orbit-float-card">
+              <span class="dot-blue"></span>
+              <span>Hosted on GitHub Pages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <h2 class="section-title">About me</h2>
+        <p class="section-sub">A quick snapshot of who I am today</p>
+      </div>
+
+      <div class="card-row">
+        <div class="card">
+          <div class="card-label">Profile</div>
+          <div class="card-title">Who is Yuvansh</div>
+          <div class="card-body">
+            I am six years old and I like to explore, experiment and learn new things. Some days you will find me building, some days drawing, and many days just asking why.
+          </div>
+          <ul class="card-list">
+            <li>Learning something new almost every week</li>
+            <li>Enjoys stories, puzzles and pretend play</li>
+            <li>Loves spending time with family</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Family</div>
+          <div class="card-title">My support team</div>
+          <div class="card-body">
+            This website is a small project made together with my parents. They help me turn ideas into real things on a screen.
+          </div>
+          <div class="chip-row">
+            <span class="chip">Guided by parents</span>
+            <span class="chip">Learning with care</span>
+            <span class="chip">Safe and simple</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Future</div>
+          <div class="card-title">What this page will become</div>
+          <div class="card-body">
+            Over time this page can grow into a small portfolio of my drawings, school projects, favourite books and maybe even simple games that I help design.
+          </div>
+          <ul class="card-list">
+            <li>Photos from different years</li>
+            <li>Little notes about what I am learning</li>
+            <li>Project ideas built with family</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favorites -->
+    <section id="favorites">
+      <div class="section-header">
+        <h2 class="section-title">My favourite things</h2>
+        <p class="section-sub">A quick list you can edit as I grow</p>
+      </div>
+
+      <div class="card-row">
+        <div class="card">
+          <div class="card-label">Play</div>
+          <div class="card-title">Games and activities</div>
+          <div class="card-body">
+            Replace the lines below with real favourites.
+          </div>
+          <ul class="card-list">
+            <li>Outdoor games with friends</li>
+            <li>Building blocks and construction toys</li>
+            <li>Board games and simple puzzles</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Stories</div>
+          <div class="card-title">Books and shows</div>
+          <div class="card-body">
+            Update this list any time my taste changes.
+          </div>
+          <ul class="card-list">
+            <li>Bedtime story books</li>
+            <li>Friendly cartoon shows</li>
+            <li>Picture books with facts and fun</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Tastes</div>
+          <div class="card-title">Food and treats</div>
+          <div class="card-body">
+            Use this card for favourites from the kitchen.
+          </div>
+          <ul class="card-list">
+            <li>Comfort food at home</li>
+            <li>Special weekend treats</li>
+            <li>Any new dish I discover and love</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <div class="section-header">
+        <h2 class="section-title">Photo corner</h2>
+        <p class="section-sub">Simple wall where memories can appear</p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- You can swap placeholder images with real ones later -->
+        <div class="gallery-item">
+          <!-- Example: <img src="images/yuvansh-1.jpg" alt="Yuvansh playing" /> -->
+          First photo<br />Add an image here.
+        </div>
+        <div class="gallery-item">
+          Second photo<br />Maybe a birthday picture.
+        </div>
+        <div class="gallery-item">
+          Third photo<br />A trip or a park visit.
+        </div>
+        <div class="gallery-item">
+          Fourth photo<br />Any other favourite moment.
+        </div>
+      </div>
+      <p class="tagline">
+        Tip for parents: create an <code>images/</code> folder in the GitHub repo and replace the text blocks above with actual
+        <code>&lt;img&gt;</code> tags.
+      </p>
+    </section>
+
+    <!-- Today section -->
+    <section id="today">
+      <div class="section-header">
+        <h2 class="section-title">Today I am learning</h2>
+        <p class="section-sub">A small log you can update together</p>
+      </div>
+
+      <div class="fact-grid">
+        <div class="fact">
+          <strong>At school</strong>
+          You can write here what I am currently learning in school. For example: numbers, reading, simple science facts or new languages.
+        </div>
+        <div class="fact">
+          <strong>At home</strong>
+          This can be used for anything we are exploring together at home, like drawing, music, simple coding toys or small experiments.
+        </div>
+        <div class="fact">
+          <strong>New habit</strong>
+          Keep a line here for any new habit we are trying, such as reading for a few minutes daily or cleaning up toys after playtime.
+        </div>
+        <div class="fact">
+          <strong>Big smile moment</strong>
+          A short note about something that made me very happy recently, like a visit, a game, a phone call or a new achievement.
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Age 6 · Starting this page</strong>
+          First version of my website goes live on GitHub Pages. From here we can keep adding small pieces as I grow.
+        </div>
+        <div class="timeline-item">
+          <strong>Future updates</strong>
+          New sections can be added below for each year, capturing a few lines about what changed, what I learned and what I enjoyed most.
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-note">
+        Made for and with&nbsp;<strong>Yuvansh Jain</strong>. A small start to a long journey of learning and creating.
+      </div>
+      <div class="footer-links">
+        <!-- Replace with real links if you like -->
+        <a href="#about">Back to top</a>
+        <a href="https://github.com" target="_blank" rel="noreferrer">Hosted on GitHub Pages</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
