@@ -3,13 +3,22 @@ layout: default
 ---
 
 <div class="card">
-  <h2>{{ page.title }}</h2>
-  <div class="meta">
-    {{ page.date | date: "%B %d, %Y" }}
-    {% if page.category %}
-      · {{ page.category | capitalize }}
-    {% endif %}
+  <div class="section-header">
+    <h2>{{ page.title }}</h2>
+    <span>{{ page.date | date: "%B %d, %Y" }}</span>
   </div>
 
-  {{ content }}
+  {% assign cat = page.category | default: "updates" %}
+  {% capture cat_class %}cat-{{ cat }}{% endcapture %}
+
+  <div style="margin-bottom:10px;">
+    <span class="category-badge {{ cat_class }}">
+      <span class="badge-dot"></span>
+      {{ cat | capitalize }}
+    </span>
+  </div>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
 </div>
