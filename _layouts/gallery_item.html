@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="card">
+  <div class="section-header">
+    <h2>{{ page.title }}</h2>
+    <span>{{ page.date | date: "%B %d, %Y" }}</span>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <span class="category-badge cat-gallery">
+      <span class="badge-dot"></span>
+      Gallery
+    </span>
+  </div>
+
+  {% if page.image %}
+    <div class="gallery-thumb" style="border-radius:14px; overflow:hidden; margin-bottom:14px;">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% elsif page.video_url %}
+    <div class="gallery-thumb" style="border-radius:14px; overflow:hidden; margin-bottom:14px; padding-top:56%;">
+      <iframe src="{{ page.video_url }}" allowfullscreen></iframe>
+    </div>
+  {% endif %}
+
+  {% if page.caption %}
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px;">
+      {{ page.caption }}
+    </p>
+  {% endif %}
+
+  {{ content }}
+</div>
