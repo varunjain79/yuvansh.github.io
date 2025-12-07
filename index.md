@@ -8,7 +8,7 @@ title: "Home"
     <div class="hero-badge">Yuvansh · Age 6 · New-gen learner</div>
     <h1 class="hero-title">Welcome to my lab on the internet.</h1>
     <p class="hero-sub">
-      I explore school, code, AI, YouTube, LEGO, and random science ideas.
+      I explore school, code, AI, YouTube, LEGO and random science ideas.
       This website is my notebook for all of it.
     </p>
     <div class="hero-tags">
@@ -18,7 +18,7 @@ title: "Home"
       <span class="pill">📷 Photos & videos</span>
     </div>
     <div class="hero-stats">
-      <span>Latest posts update as I learn new things.</span>
+      <span>New posts whenever I discover or build something cool.</span>
     </div>
   </div>
   <div class="hero-visual">
@@ -31,7 +31,7 @@ title: "Home"
       </div>
       <div class="hero-chip">
         <div class="hero-chip-label">Today’s focus</div>
-        <div class="hero-chip-value">Math & robots</div>
+        <div class="hero-chip-value">Math & code</div>
       </div>
       <div class="hero-chip">
         <div class="hero-chip-label">Working on</div>
@@ -39,7 +39,19 @@ title: "Home"
       </div>
       <div class="hero-chip">
         <div class="hero-chip-label">Next idea</div>
-        <div class="hero-chip-value">Build new AI buddy</div>
+        <div class="hero-chip-value">New AI buddy</div>
+      </div>
+    </div>
+
+    <div class="hero-photo-strip">
+      <div class="hero-photo">
+        <img src="{{ '/assets/profile/yuvansh-hero-1.jpg' | relative_url }}" alt="Yuvansh photo 1">
+      </div>
+      <div class="hero-photo">
+        <img src="{{ '/assets/profile/yuvansh-hero-2.jpg' | relative_url }}" alt="Yuvansh photo 2">
+      </div>
+      <div class="hero-photo">
+        <img src="{{ '/assets/profile/yuvansh-hero-3.jpg' | relative_url }}" alt="Yuvansh photo 3">
       </div>
     </div>
   </div>
