@@ -77,6 +77,15 @@
       background: radial-gradient(circle at 30% 20%, #38bdf8, #4f46e5);
       border: 2px solid rgba(248, 250, 252, 0.4);
       box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+      overflow: hidden;
+    }
+
+    .brand-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 999px;
+      display: block;
     }
 
     .brand-text h1 {
@@ -238,6 +247,29 @@
       opacity: 0.3;
     }
 
+    /* photo strip on hero right side */
+    .hero-photo-strip {
+      margin-top: 10px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .hero-photo {
+      flex: 1;
+      aspect-ratio: 3 / 4;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(248, 250, 252, 0.3);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
     .section-header {
       display: flex;
       align-items: baseline;
@@ -377,7 +409,40 @@
       text-align: center;
       font-size: 11px;
       color: var(--text-muted);
-      padding: 12px 0 20px;
+      padding: 12px 0 18px;
+      border-top: 1px solid rgba(30, 64, 175, 0.6);
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.18), rgba(15, 23, 42, 0.96));
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 8px 18px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .footer-chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      text-decoration: none;
+      color: #e5e7eb;
+    }
+
+    .footer-chip:hover {
+      border-color: rgba(248, 250, 252, 0.8);
     }
 
     @media (max-width: 720px) {
@@ -390,6 +455,9 @@
       nav {
         justify-content: flex-start;
       }
+      .hero-photo-strip {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -399,7 +467,10 @@
       <div class="nav-inner">
         <a href="{{ '/' | relative_url }}" style="text-decoration:none;">
           <div class="brand">
-            <div class="brand-avatar"></div>
+            <div class="brand-avatar">
+              <!-- optional small avatar in nav -->
+              <img src="{{ '/assets/profile/yuvansh-about.jpg' | relative_url }}" alt="Yuvansh">
+            </div>
             <div class="brand-text">
               <h1>Yuvansh’s Lab</h1>
               <p>6-year-old explorer · code · AI · fun</p>
@@ -408,6 +479,7 @@
         </a>
         <nav>
           <a class="nav-link primary" href="{{ '/' | relative_url }}">Home</a>
+          <a class="nav-link" href="{{ '/about/' | relative_url }}">About</a>
           <a class="nav-link" href="{{ '/school/' | relative_url }}">School</a>
           <a class="nav-link" href="{{ '/projects/' | relative_url }}">Projects</a>
           <a class="nav-link" href="{{ '/ai/' | relative_url }}">Custom AIs</a>
@@ -423,7 +495,25 @@
     </main>
 
     <footer>
-      Built by Yuvansh for the future (with a tiny bit of help).
+      <div class="footer-inner">
+        <div class="footer-socials">
+          {% if site.social.linkedin %}
+            <a class="footer-chip" href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+          {% endif %}
+          {% if site.social.youtube %}
+            <a class="footer-chip" href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a>
+          {% endif %}
+          {% if site.social.github %}
+            <a class="footer-chip" href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+          {% endif %}
+          {% if site.social.email %}
+            <a class="footer-chip" href="mailto:{{ site.social.email }}">Email</a>
+          {% endif %}
+        </div>
+        <div style="margin-top:4px;">
+          Built by Yuvansh for the future (with a tiny bit of help).
+        </div>
+      </div>
     </footer>
   </div>
 </body>
