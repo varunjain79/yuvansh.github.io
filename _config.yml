@@ -24,3 +24,10 @@ defaults:
       type: "gallery"
     values:
       layout: "gallery_item"
+
+social:
+  linkedin: "https://www.linkedin.com/in/your-yuvansh-link-here"
+  youtube: "https://www.youtube.com/@your-channel-or-placeholder"
+  github: "https://github.com/your-yuvansh-handle"
+  email: "hello@yuvansh.info"
+
