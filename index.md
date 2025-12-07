@@ -3,34 +3,74 @@ layout: default
 title: "Home"
 ---
 
-<div class="card">
-  <h2>Hi, I'm Yuvansh 👋</h2>
-  <p>I am 6 years old. I like computers, robots, AI and making things.</p>
-  <p>This site is where I keep track of what I learn and build.</p>
+<div class="card hero">
+  <div>
+    <div class="hero-badge">Yuvansh · Age 6 · New-gen learner</div>
+    <h1 class="hero-title">Welcome to my lab on the internet.</h1>
+    <p class="hero-sub">
+      I explore school, code, AI, YouTube, LEGO, and random science ideas.
+      This website is my notebook for all of it.
+    </p>
+    <div class="hero-tags">
+      <span class="pill">🧮 School learning</span>
+      <span class="pill">🕹️ Projects & games</span>
+      <span class="pill">🤖 Custom AIs</span>
+      <span class="pill">📷 Photos & videos</span>
+    </div>
+    <div class="hero-stats">
+      <span>Latest posts update as I learn new things.</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-orbit"></div>
+    <div class="hero-visual-title">Today in my world</div>
+    <div class="hero-visual-grid">
+      <div class="hero-chip">
+        <div class="hero-chip-label">Current mood</div>
+        <div class="hero-chip-value">Curious 🔍</div>
+      </div>
+      <div class="hero-chip">
+        <div class="hero-chip-label">Today’s focus</div>
+        <div class="hero-chip-value">Math & robots</div>
+      </div>
+      <div class="hero-chip">
+        <div class="hero-chip-label">Working on</div>
+        <div class="hero-chip-value">Scratch game</div>
+      </div>
+      <div class="hero-chip">
+        <div class="hero-chip-label">Next idea</div>
+        <div class="hero-chip-value">Build new AI buddy</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-  <h3>Latest from my notebook</h3>
-  {% assign latest_posts = site.posts | sort: "date" | reverse | slice: 0, 5 %}
-  <ul>
+  <div class="section-header">
+    <h2>Latest entries</h2>
+    <span>New things I learned and built</span>
+  </div>
+  <div class="post-list">
+    {% assign latest_posts = site.posts | sort: "date" | reverse | slice: 0, 6 %}
     {% for post in latest_posts %}
-      <li>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          <strong>{{ post.title }}</strong>
-        </a>
-        <span class="meta"> · {{ post.date | date: "%b %d, %Y" }} · {{ post.category | capitalize }}</span>
-      </li>
+      {% assign cat = post.category | default: "updates" %}
+      {% capture cat_class %}cat-{{ cat }}{% endcapture %}
+      <a href="{{ post.url | relative_url }}" style="text-decoration:none;">
+        <div class="post-card">
+          <div class="post-main">
+            <p class="post-title">{{ post.title }}</p>
+            <p class="post-meta">
+              {{ post.date | date: "%b %d, %Y" }} · {{ cat | capitalize }}
+            </p>
+          </div>
+          <div>
+            <span class="category-badge {{ cat_class }}">
+              <span class="badge-dot"></span>
+              {{ cat | capitalize }}
+            </span>
+          </div>
+        </div>
+      </a>
     {% endfor %}
-  </ul>
-</div>
-
-<div class="card">
-  <h3>Sections</h3>
-  <ul>
-    <li><a href="{{ '/school/' | relative_url }}">What I Learned at School</a></li>
-    <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-    <li><a href="{{ '/ai/' | relative_url }}">My Custom AIs</a></li>
-    <li><a href="{{ '/youtube/' | relative_url }}">My YouTube Stuff</a></li>
-    <li><a href="{{ '/updates/' | relative_url }}">Updates</a></li>
-  </ul>
+  </div>
 </div>
