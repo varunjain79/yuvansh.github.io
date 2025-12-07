@@ -1,0 +1,18 @@
+title: "Yuvansh’s Lab"
+description: "Things I learn, build and explore."
+baseurl: "" # for user.github.io root; set if using subfolder
+url: "https://yuvansh.info"
+
+markdown: kramdown
+theme: null
+
+# Build settings
+permalink: /:categories/:year/:month/:day/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
