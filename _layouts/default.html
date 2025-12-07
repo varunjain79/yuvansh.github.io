@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background: #1a73e8;
+      color: white;
+      padding: 12px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    nav {
+      margin-top: 8px;
+    }
+    nav a {
+      color: #e3f2fd;
+      text-decoration: none;
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      padding: 0 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .card h2, .card h3 {
+      margin-top: 0;
+    }
+    .meta {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    a.post-link {
+      text-decoration: none;
+      color: inherit;
+    }
+    a.post-link:hover h3 {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      padding: 20px 0 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}" style="color:white; text-decoration:none;">{{ site.title }}</a></h1>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/school/' | relative_url }}">What I Learned at School</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/ai/' | relative_url }}">My Custom AIs</a>
+      <a href="{{ '/youtube/' | relative_url }}">YouTube</a>
+      <a href "{{ '/updates/' | relative_url }}">Updates</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    {{ content }}
+  </div>
+
+  <footer>
+    Made by Yuvansh (with a little help).
+  </footer>
+</body>
+</html>
