@@ -1,18 +1,26 @@
 title: "Yuvansh’s Lab"
 description: "Things I learn, build and explore."
-baseurl: "" # for user.github.io root; set if using subfolder
+baseurl: ""
 url: "https://yuvansh.info"
 
 markdown: kramdown
 theme: null
 
-# Build settings
 permalink: /:categories/:year/:month/:day/:title/
 
-# Default front matter
+collections:
+  gallery:
+    output: true
+    permalink: /gallery/:name/
+
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "gallery"
+    values:
+      layout: "gallery_item"
