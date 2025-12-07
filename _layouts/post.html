@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="card">
+  <h2>{{ page.title }}</h2>
+  <div class="meta">
+    {{ page.date | date: "%B %d, %Y" }}
+    {% if page.category %}
+      · {{ page.category | capitalize }}
+    {% endif %}
+  </div>
+
+  {{ content }}
+</div>
