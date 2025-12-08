@@ -1,1 +1,1 @@
-# yuvansh.github.io
+# yuvansh.io
