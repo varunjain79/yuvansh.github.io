@@ -4,10 +4,8 @@ title: "What I Learned at School"
 permalink: /school/
 ---
 
-<div class="card">
-  <h2>What I Learned at School</h2>
-  <p>Things I understood or discovered in school.</p>
-</div>
+- What I Learned at School
+Things I understood or discovered in school
 
 {% assign items = site.posts | where: "category", "school" | sort: "date" | reverse %}
 {% for post in items %}
