@@ -4,6 +4,8 @@ title: "Updates"
 permalink: /updates/
 ---
 
+- Updates
+  News about me, my life and changes on this website.
 
 {% assign items = site.posts | where: "category", "updates" | sort: "date" | reverse %}
 {% for post in items %}
