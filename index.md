@@ -199,7 +199,7 @@ body {
     <div class="hero-badge">Yuvansh · Age 6 · New-gen learner</div>
 
     <h1 class="hero-title">
-      Welcome to my <span class="gradient-text">digital lab</span>.
+      Welcome to my <span class="gradient-text">Digital lab</span>.
     </h1>
 
     <p class="hero-sub">
