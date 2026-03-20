@@ -8,7 +8,10 @@ permalink: /youtube/
   <h2>My YouTube Stuff</h2>
   <p>My favourite channels, videos I like, and anything I post on YouTube.</p>
 </div>
-
+social:
+Beluga: youtube.com/@beluga1
+Talking Tom and Friends: youtube.com/TalkingFriends
+Paw Patrol: m.youtube.com/user/OfficialPawPatrol
 {% assign items = site.posts | where: "category", "youtube" | sort: "date" | reverse %}
 {% for post in items %}
   <a class="post-link" href="{{ post.url | relative_url }}">
