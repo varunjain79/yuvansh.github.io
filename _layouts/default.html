@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description }}">
 
-  <!-- Google Identity -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-
   <style>
     :root {
       --bg-gradient: radial-gradient(circle at top, #111827 0, #020617 40%, #000000 100%);
@@ -59,14 +56,6 @@
       margin: 20px auto;
       padding: 20px;
     }
-
-    .login-box {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 12px;
-      border: 1px solid #334155;
-      background: rgba(15,23,42,0.9);
-    }
   </style>
 </head>
 
@@ -78,75 +67,20 @@
 
     <nav>
       <a class="nav-link" href="/">Home</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/school/')">School</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/projects/')">Projects</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/ai/')">Custom AIs</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/youtube/')">YouTube</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/gallery/')">Gallery</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/updates/')">Updates</a>
-
-      <a class="nav-link" href="#" onclick="protectPage(event, '/booking/')">Booking</a>
+      <a class="nav-link" href="/school/">School</a>
+      <a class="nav-link" href="/projects/">Projects</a>
+      <a class="nav-link" href="/ai/">Custom AIs</a>
+      <a class="nav-link" href="/youtube/">YouTube</a>
+      <a class="nav-link" href="/gallery/">Gallery</a>
+      <a class="nav-link" href="/updates/">Updates</a>
+      <a class="nav-link" href="/booking/">Booking</a>
     </nav>
   </div>
 </header>
 
 <main>
-
-  <!-- 🔐 GOOGLE LOGIN -->
-  <div class="login-box">
-    <h3>Login with Google</h3>
-
-    <div id="g_id_onload"
-         data-client_id="947445896989-a2uniqhbe95qtog2b2f40rq8c4mj1kjs.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
-    </div>
-
-    <div class="g_id_signin"
-         data-type="standard"
-         data-size="large">
-    </div>
-  </div>
-
   {{ content }}
-
 </main>
-
-<!-- 🧠 LOGIN + PROTECTION SCRIPT -->
-<script>
-  let isLoggedIn = false;
-
-  function handleCredentialResponse(response) {
-    const data = parseJwt(response.credential);
-    isLoggedIn = true;
-
-    alert("Welcome " + data.name);
-  }
-
-  function protectPage(event, url) {
-    if (!isLoggedIn) {
-      event.preventDefault();
-      alert("Please login first!");
-    } else {
-      window.location.href = url;
-    }
-  }
-
-  function parseJwt(token) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-  }
-</script>
 
 </body>
 </html>
