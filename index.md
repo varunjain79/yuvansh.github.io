@@ -261,6 +261,7 @@ body {
         <div class="hero-chip">
           <div class="hero-chip-label">Next</div>
           <div class="hero-chip-value">YJ Language 🚀</div>
+         <a href="/privacy/">Privacy Policy</a>
         </div>
 
       </div>
