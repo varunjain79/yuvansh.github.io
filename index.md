@@ -262,8 +262,15 @@ body {
           <div class="hero-chip-label">Next</div>
           <div class="hero-chip-value">YJ Language 🚀</div>
          <a href="/privacy/">Privacy Policy</a>
-        </div>
+         /* ---------- Search Bar ---------- */
+            <script async src="https://cse.google.com/cse.js?cx=f2e93a617b5134b79">
+</script>
+<div class="gcse-search"></div>
 
+
+         
+        </div>
+ 
       </div>
 
     </div>
