@@ -195,6 +195,118 @@ body {
 }
 
 
+/* ---------- SEARCH BAR ---------- */
+
+.search-section {
+  margin: 48px 25px 0;
+}
+
+.search-label {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(96,165,250,0.25);
+  border-radius: 999px;
+  padding: 6px 10px 6px 20px;
+  box-shadow: 0 0 0 0 rgba(96,165,250,0), 0 8px 32px rgba(0,0,0,0.4);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.search-wrapper:focus-within {
+  border-color: rgba(96,165,250,0.6);
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.15), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* Override Google CSE styles to blend in */
+.gsc-control-cse {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: inherit !important;
+}
+
+.gsc-search-box {
+  margin: 0 !important;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  padding: 0 !important;
+}
+
+.gsc-input-box {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.gsc-input-box input.gsc-input {
+  background: transparent !important;
+  color: #e5e7eb !important;
+  font-size: 15px !important;
+  padding: 10px 0 !important;
+}
+
+.gsc-input-box input.gsc-input::placeholder {
+  color: rgba(229,231,235,0.4) !important;
+}
+
+.gsc-search-button {
+  margin: 0 !important;
+}
+
+.gsc-search-button-v2 {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa) !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 8px 20px !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s !important;
+}
+
+.gsc-search-button-v2:hover {
+  opacity: 0.85 !important;
+}
+
+.gsc-search-button-v2 svg {
+  fill: #fff !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.gsc-results-wrapper-overlay {
+  border-radius: 16px !important;
+  background: rgba(15,23,42,0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+  margin-top: 8px !important;
+}
+
+.gs-result .gs-title, .gs-result .gs-title * {
+  color: #60a5fa !important;
+}
+
+.gs-result .gs-snippet {
+  color: rgba(229,231,235,0.7) !important;
+}
+
+.gsc-webResult.gsc-result {
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 900px) {
@@ -261,23 +373,28 @@ body {
         <div class="hero-chip">
           <div class="hero-chip-label">Next</div>
           <div class="hero-chip-value">YJ Language 🚀</div>
-         <a href="/privacy/">Privacy Policy</a>
-             <div class="hero-chip">
+        </div>
+
+        <div class="hero-chip">
           <div class="hero-chip-label">...</div>
           <div class="hero-chip-value">More</div>
-         <a href="/privacy/">Privacy Policy</a>
-            <script async src="https://cse.google.com/cse.js?cx=f2e93a617b5134b79">
-</script>
-<div class="gcse-search"></div>
-
-
-         
+          <a href="/privacy/" style="font-size:11px; opacity:0.5; display:block; margin-top:4px;">Privacy Policy</a>
         </div>
- 
+
       </div>
 
     </div>
 
   </div>
 
+</div>
+
+
+<!-- Search Bar -->
+<div class="search-section">
+  <div class="search-label">Search this site</div>
+  <div class="search-wrapper">
+    <script async src="https://cse.google.com/cse.js?cx=f2e93a617b5134b79"></script>
+    <div class="gcse-search"></div>
+  </div>
 </div>
