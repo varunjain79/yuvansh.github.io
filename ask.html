@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script>
+        function copyPhoneNumber() {
+            const phoneNumber = document.getElementById('phoneNumber');
+            navigator.clipboard.writeText(phoneNumber.textContent);
+            alert('Phone number copied to clipboard!');
+        }
+    </script>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p id="phoneNumber">+91 70451 59459</p>
+    <button onclick="copyPhoneNumber()">Copy Phone Number</button>
+    <p>WhatsApp only</p>
+    <h2>Share Your Project Ideas</h2>
+    <form action="/submit-idea" method="POST">
+        <label for="idea">Your Idea:</label><br>
+        <textarea id="idea" name="idea" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
