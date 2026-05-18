@@ -1,20 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Website</title>
-</head>
-<body>
-<nav>
-    <ul>
-        <li><a href="/updates/">Updates</a></li>
-        <li><a href="/ask/">Ask</a></li>
-        <li><a href="/booking/">Booking</a></li>
-    </ul>
-</nav>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
 
-<!-- Additional content can go here -->
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at top, #111827 0, #020617 40%, #000000 100%);
+      --card-bg: rgba(15, 23, 42, 0.92);
+      --card-border: rgba(148, 163, 184, 0.2);
+      --accent: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      background: rgba(15, 23, 42, 1);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-inner">
+    <h2>Yuvansh’s Lab</h2>
+
+    <nav>
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/school/">School</a>
+      <a class="nav-link" href="/projects/">Projects</a>
+      <a class="nav-link" href="/ai/">Custom AIs</a>
+      <a class="nav-link" href="/youtube/">YouTube</a>
+      <a class="nav-link" href="/gallery/">Gallery</a>
+      <a class="nav-link" href="/updates/">Updates</a>
+      <a class="nav-link" href="/ask/">Ask</a>
+      <a class="nav-link" href="/booking/">Booking</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  {{ content }}
+</main>
 
 </body>
 </html>
