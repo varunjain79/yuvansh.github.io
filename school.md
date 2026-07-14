@@ -6,9 +6,6 @@ permalink: /school/
 
 - What I Learned at School
 Things I understood or discovered in school.
-#- Today in Maths i did Addition and subtraction sums in my practice notebook.
-#- I wrote Senteces in Hindi.
-#- I learnt about lawyers and judges in my Blossoms book.
 {% assign items = site.posts | where: "category", "school" | sort: "date" | reverse %}
 {% for post in items %}
   <a class="post-link" href="{{ post.url | relative_url }}">
@@ -19,3 +16,6 @@ Things I understood or discovered in school.
     </div>
   </a>
 {% endfor %}
+#- Today in Maths i did Addition and subtraction sums in my practice notebook.
+#- I wrote Senteces in Hindi.
+#- I learnt about lawyers and judges in my Blossoms book.
