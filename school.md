@@ -16,6 +16,6 @@ Things I understood or discovered in school.
     </div>
   </a>
 {% endfor %}
-#- Today in Maths i did Addition and subtraction sums in my practice notebook.
-#- I wrote Senteces in Hindi.
-#- I learnt about lawyers and judges in my Blossoms book.
+#- Today in Math, I did calendar reading in my Mental Maths book.
+#- Today in English, I wrote 6 words from a story on a sheet.
+#- Yesterday in school my teacher told the class to find fair situations.
