@@ -126,7 +126,7 @@ permalink: /bot/
   <section class="bot-hero bot-panel">
     <div class="bot-label">WhatsApp Bot</div>
     <h1 class="bot-title">Chat with the bot in a fast, simple, friendly way.</h1>
-    <p class="bot-lead">This page is now a proper Jekyll page, so the layout stays consistent with the rest of the site while keeping the bot’s interactive landing content intact.</p>
+    
 
     <div class="bot-grid">
       <div class="bot-stat"><strong>Instant replies</strong><span>Quick answers with a clean interface.</span></div>
@@ -141,7 +141,5 @@ permalink: /bot/
   </section>
 
   <section class="bot-section bot-panel">
-    <h2>What stays the same</h2>
-    <p>The bot page still belongs on your website, but now it uses Jekyll front matter and the shared site layout. That means it can be managed like the rest of your pages without losing the special bot feel.</p>
   </section>
 </div>
