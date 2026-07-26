@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 · Not Found</title>
+  <style>
+    :root {
+      --bg1: #06121f;
+      --bg2: #081a2e;
+      --bg3: #0a2436;
+      --card-bg: rgba(10, 24, 40, 0.86);
+      --card-border: rgba(56, 189, 248, 0.24);
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --text-main: #eff6ff;
+      --text-muted: #a7c0da;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.22), transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 45%, var(--bg3));
+      padding: 24px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "Y Y Y Y Y Y Y Y Y";
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: clamp(3rem, 12vw, 9rem);
+      font-weight: 900;
+      letter-spacing: 0.35em;
+      color: rgba(96, 165, 250, 0.05);
+      pointer-events: none;
+      transform: rotate(-18deg);
+      user-select: none;
+      z-index: 0;
+      text-shadow: 0 0 14px rgba(34, 197, 94, 0.12), 0 0 24px rgba(56, 189, 248, 0.12);
+      white-space: pre-wrap;
+      line-height: 1.8;
+      padding: 10vh 6vw;
+      text-align: center;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: min(860px, 100%);
+      padding: 30px;
+      border-radius: 28px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      color: #dbeafe;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .tile {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tile strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .tile span {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    a.btn:hover { transform: translateY(-2px); opacity: 0.92; }
+    .primary { background: linear-gradient(90deg, var(--accent), var(--accent2)); color: #04111d; }
+    .secondary { background: rgba(255, 255, 255, 0.06); color: #eff6ff; border: 1px solid rgba(96, 165, 250, 0.18); }
+
+    .clue {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(8, 18, 32, 0.72);
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      color: #c7f9ff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="badge">404 · Aloo Edition</div>
+    <h1>🥔 Page not found</h1>
+    <p>The page you tried to open does not exist. But the potato trail is real, and the hidden path is still out there.</p>
+
+    <div class="grid">
+      <div class="tile"><strong>Aloo clue</strong><span>Sometimes a missing page is the clue itself.</span></div>
+      <div class="tile"><strong>Blue-green trail</strong><span>Look for the pages with secret names and hidden links.</span></div>
+      <div class="tile"><strong>Next step</strong><span>Try going back to the homepage or the Redeem Center.</span></div>
+    </div>
+
+    <div class="links">
+      <a class="btn primary" href="/">Go Home</a>
+      <a class="btn secondary" href="/redeem/">Redeem Center</a>
+      <a class="btn secondary" href="/aloo/">Aloo page</a>
+    </div>
+
+    <div class="clue">[ALOO-404] Hidden trail active\n[STATUS] Potato path ready\n[HINT] The cucumber is still deeper</div>
+  </main>
+</body>
+</html>
