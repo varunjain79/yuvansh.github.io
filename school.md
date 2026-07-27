@@ -16,6 +16,6 @@ Things I understood or discovered in school.
     </div>
   </a>
 {% endfor %}
-#- Today in Math, I did calendar reading in my Mental Maths book.
-#- Today in English, I wrote 6 words from a story on a sheet.
-#- Yesterday in school my teacher told the class to find fair situations.
+#- Today in Math, I did Asending order and Desending order.
+#- Today in English, I did Spell Well.
+
