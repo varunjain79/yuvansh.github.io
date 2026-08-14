@@ -157,6 +157,20 @@ permalink: /yuvanshcomputer/
     line-height: 1.5;
   }
 
+  .guide-panel {
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid rgba(34, 197, 94, 0.22);
+    border-radius: 14px;
+    background: rgba(6, 20, 18, 0.72);
+    display: none;
+  }
+
+  .guide-panel.open { display: block; }
+  .guide-panel h3 { margin-top: 0; color: #86efac; }
+  .guide-panel p { color: #cbd5e1; line-height: 1.6; }
+  .guide-panel li { margin: 7px 0; color: #cbd5e1; }
+
   @media (max-width: 760px) {
     .computer-body { grid-template-columns: 1fr; }
     .desktop { border-right: 0; border-bottom: 1px solid rgba(56, 189, 248, 0.16); }
@@ -179,6 +193,7 @@ permalink: /yuvanshcomputer/
         <button class="desktop-button" data-command="projects">▣ Projects</button>
         <button class="desktop-button" data-command="storage">▣ Storage</button>
         <button class="desktop-button" data-command="about">▣ System Info</button>
+        <button class="desktop-button" data-command="guide">🧭 Yuva Guide</button>
         <button class="desktop-button" data-command="secret">▣ Unknown</button>
       </aside>
 
@@ -191,6 +206,18 @@ permalink: /yuvanshcomputer/
             <input id="command-input" autocomplete="off" spellcheck="false" placeholder="type a command...">
             <button class="run-command" id="run-command">Run</button>
           </div>
+        </div>
+
+        <div class="guide-panel" id="guide-panel">
+          <h3>🧭 Yuva Guide</h3>
+          <p>Welcome to the guide hidden inside Yuvansh's Computer. If you are wondering what this strange computer is, start exploring.</p>
+          <ul>
+            <li><strong>Projects</strong> — inspect the mysterious project archive.</li>
+            <li><strong>Storage</strong> — investigate the suspicious 11 PB display.</li>
+            <li><strong>Unknown</strong> — try it if you are brave enough.</li>
+            <li><strong>Terminal</strong> — type <code>help</code> for commands.</li>
+          </ul>
+          <p>🌀 Yuva Guide tip: not everything you find here has to exist in the real world.</p>
         </div>
 
         <div class="info-grid">
@@ -212,6 +239,7 @@ permalink: /yuvanshcomputer/
   const output = document.getElementById('terminal-output');
   const input = document.getElementById('command-input');
   const run = document.getElementById('run-command');
+  const guidePanel = document.getElementById('guide-panel');
 
   const commands = {
     help: [
@@ -220,6 +248,7 @@ permalink: /yuvanshcomputer/
       '  projects  - inspect the project archive',
       '  storage   - inspect the completely normal storage',
       '  about     - system information',
+      '  guide     - open Yuva Guide',
       '  secret    - attempt something questionable',
       '  clear     - clear the terminal'
     ],
@@ -253,6 +282,13 @@ permalink: /yuvanshcomputer/
       'Network:        WEBSITE',
       'Reality level:  Questionable'
     ],
+    guide: [
+      'YUVA GUIDE',
+      '----------',
+      'The guide is open in the panel below the terminal.',
+      'Explore Projects, Storage, Unknown, and the terminal.',
+      'Remember: the computer is a website simulation.'
+    ],
     secret: [
       'ACCESSING UNKNOWN APPLICATION...',
       'Checking permissions...',
@@ -277,6 +313,7 @@ permalink: /yuvanshcomputer/
       output.textContent = '';
       return;
     }
+    if (command === 'guide') guidePanel.classList.add('open');
     if (commands[command]) {
       print(commands[command]);
     } else {
