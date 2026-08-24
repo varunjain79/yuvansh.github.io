@@ -62,7 +62,7 @@ permalink: /booking/
       Schedule a 30-minute session with me.
     </p>
 
-    <a href="https://calendly.com/yuvanshvjain/30min" target="_blank" class="booking-btn">
+    <a href="https://calendly.com/yuvanshvjain/yuvansh-meet" target="_blank" class="booking-btn">
       Book Now
     </a>
 
