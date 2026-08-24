@@ -59,7 +59,7 @@ permalink: /booking/
     <h1 class="booking-title">Book a Call</h1>
 
     <p class="booking-sub">
-      Schedule a 30-minute session with me.
+      Schedule a 1 hoor session with me.
     </p>
 
     <a href="https://calendly.com/yuvanshvjain/yuvansh-meet" target="_blank" class="booking-btn">
