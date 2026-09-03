@@ -3,6 +3,8 @@ layout: default
 title: "Home"
 ---
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <style>
 
 /* ---------- GLOBAL ---------- */
@@ -321,6 +323,12 @@ body {
 
 </style>
 
+<script>
+  function onSubmit(token) {
+    // Form submission handler for reCAPTCHA
+    console.log('reCAPTCHA validated:', token);
+  }
+</script>
 
 <div class="hero-wrapper">
 
